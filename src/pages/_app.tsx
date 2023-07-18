@@ -6,6 +6,8 @@ import '@/styles/globals.css';
 import { League_Spartan } from 'next/font/google';
 const leagueSpartan = League_Spartan({ subsets: ['latin'] });
 
+import Header from '@/resources/Header';
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <NextUIProvider>
@@ -13,6 +15,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <title>Luiz Doretto | Portfolio</title>
       </Head>
       <main className={leagueSpartan.className}>
+        <Header />
         <Component {...pageProps} />
       </main>
     </NextUIProvider>
