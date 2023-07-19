@@ -2,20 +2,22 @@ import React from 'react';
 import { CardStyled } from './styled';
 import { Card, Image } from '@nextui-org/react';
 
-interface SkillCard<T> {
+interface SkillCard {
   imageURL: string;
-  skillName: T;
-  setSkillSelected: React.Dispatch<React.SetStateAction<T | undefined>>;
+  onMouseEnter: () => void;
+  onMouseLeave: () => void;
+  onClick: () => void;
 }
 
-export default function SkillCard<T>({ imageURL, skillName, setSkillSelected }: SkillCard<T>) {
+export default function SkillCard({ imageURL, onMouseEnter, onMouseLeave, onClick }: SkillCard) {
   return (
     <CardStyled
       variant="bordered"
       isPressable
       isHoverable
-      onMouseEnter={() => setSkillSelected(skillName)}
-      onMouseLeave={() => setSkillSelected(undefined)}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      onClick={onClick}
     >
       <Card.Body>
         <Image src={imageURL} />

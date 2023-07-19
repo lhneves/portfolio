@@ -46,8 +46,9 @@ export default function Skills() {
             <SkillCard
               key={skill}
               imageURL={`/devicons/${skill}.svg`}
-              skillName={skill as SkillType}
-              setSkillSelected={setSkillSelected}
+              onClick={() => setSkillSelected(skill as SkillType)}
+              onMouseEnter={() => setSkillSelected(skill as SkillType)}
+              onMouseLeave={() => setSkillSelected(undefined)}
             />
           ))}
         </SkillsContainer>
