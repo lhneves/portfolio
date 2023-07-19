@@ -9,19 +9,18 @@ export const Container = styled.section`
   display: flex;
   flex-direction: column;
   gap: 0;
-  padding-top: ${rem(24)};
+  padding: ${rem(24)} 0;
 
   @media (min-width: 600px) {
     height: 90vh;
   }
 
   @media (min-width: 1200px) {
-    height: 85vh;
     display: grid;
     grid-template-columns: 0.8fr 0.6fr;
     align-items: center;
     justify-content: center;
-    gap: 50px;
+    gap: ${rem(50)};
     padding-top: 0;
   }
 `;
@@ -35,20 +34,20 @@ export const LeftContainer = styled.div`
 `;
 
 export const UpTitle = styled.span`
-  font-size: 24px;
+  font-size: ${rem(24)};
   font-weight: 500;
 
   @media (min-width: 600px) {
-    font-size: 35px;
+    font-size: ${rem(35)};
   }
 `;
 
 export const Title = styled.h1`
-  font-size: 48px;
+  font-size: ${rem(48)};
   font-weight: bold;
 
   @media (min-width: 600px) {
-    font-size: 90px;
+    font-size: ${rem(90)};
   }
 `;
 
@@ -57,16 +56,16 @@ export const TitleHighlight = styled.span`
 `;
 
 export const SubTitle = styled.p`
-  font-size: 24px;
+  font-size: ${rem(24)};
   text-align: start;
   font-weight: 400;
 
   @media (min-width: 600px) {
-    font-size: 30px;
+    font-size: ${rem(30)};
   }
 
   @media (min-width: 1200px) {
-    font-size: 32px;
+    font-size: ${rem(32)};
   }
 `;
 
@@ -97,11 +96,11 @@ const sdb10 = keyframes`
 export const ImageContainer = styled.div`
   display: flex;
   & img {
-    width: 300px;
+    width: ${rem(300)};
     height: auto;
     margin: 0 auto;
     @media (min-width: 600px) {
-      width: 400px;
+      width: ${rem(400)};
     }
   }
 `;
@@ -112,7 +111,7 @@ export const ScrollIndicator = styled.a<{ dark?: boolean }>`
   }
   display: none;
   position: absolute;
-  bottom: 100px;
+  bottom: ${rem(100)};
   left: 50%;
   z-index: 2;
   -webkit-transform: translate(0, -50%);
@@ -130,21 +129,21 @@ export const ScrollIndicator = styled.a<{ dark?: boolean }>`
     position: absolute;
     top: 0;
     left: 50%;
-    width: 30px;
-    height: 50px;
-    margin-left: -15px;
-    border: 2px solid ${({ dark }) => (dark ? '#fff' : '#000')};
-    border-radius: 50px;
+    width: ${rem(30)};
+    height: ${rem(50)};
+    margin-left: ${rem(-15)};
+    border: ${rem(2)} solid ${({ dark }) => (dark ? '#fff' : '#000')};
+    border-radius: ${rem(50)};
     box-sizing: border-box;
 
     &::before {
       position: absolute;
-      top: 10px;
+      top: ${rem(10)};
       left: 50%;
       content: '';
-      width: 6px;
-      height: 6px;
-      margin-left: -3px;
+      width: ${rem(6)};
+      height: ${rem(6)};
+      margin-left: ${rem(-3)};
       background-color: ${({ dark }) => (dark ? '#fff' : '#000')};
       border-radius: 100%;
       -webkit-animation: ${sdb10} 2s infinite;
