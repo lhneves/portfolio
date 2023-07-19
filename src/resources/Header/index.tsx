@@ -4,7 +4,7 @@ import { default as NextLink } from 'next/link';
 import { Link as ScrollLink } from 'react-scroll';
 
 export default function Header() {
-  const navbarLinks = ['ABOUT ME', 'SKILLS', 'PROJECTS', 'CONTACT'];
+  const navbarLinks = ['SKILLS', 'PROJECTS', 'CONTACT'];
 
   const navbarToggleRef = useRef<HTMLButtonElement>(null);
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
@@ -21,7 +21,7 @@ export default function Header() {
   }
 
   function handleSetInactive(to: string) {
-    if (to === 'about-me') {
+    if (to === 'skills') {
       setActiveLink('');
     }
   }
@@ -46,7 +46,7 @@ export default function Header() {
               to={linkTo}
               spy={true}
               smooth={true}
-              offset={-100}
+              offset={-80}
               duration={100}
               onSetActive={handleSetActive}
               onSetInactive={handleSetInactive}
