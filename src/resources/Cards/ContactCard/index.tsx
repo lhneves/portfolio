@@ -15,7 +15,7 @@ export default function ContactCard() {
   const [isLoading, setIsLoading] = useState(false);
   const [messageSent, setMessageSent] = useState(false);
 
-  const { control, handleSubmit } = useForm<ContactFormData>();
+  const { control, handleSubmit, reset } = useForm<ContactFormData>();
 
   const onSubmit = (data: ContactFormData) => {
     setIsLoading(true);
@@ -30,6 +30,7 @@ export default function ContactCard() {
         )
         .then(() => {
           setMessageSent(true);
+          reset();
           toast.success(
             <p>
               Your message was send! <br /> Thank you!
@@ -96,6 +97,7 @@ export default function ContactCard() {
               rules={{ required: 'Name is required' }}
               render={({ field, fieldState }) => (
                 <Input
+                  disabled={messageSent}
                   type="text"
                   placeholder="Whats your name?"
                   aria-label="name"
@@ -120,6 +122,7 @@ export default function ContactCard() {
               }}
               render={({ field, fieldState }) => (
                 <Input
+                  disabled={messageSent}
                   type="text"
                   placeholder="Whats your email?"
                   aria-label="email"
@@ -141,6 +144,7 @@ export default function ContactCard() {
               }}
               render={({ field, fieldState }) => (
                 <Textarea
+                  disabled={messageSent}
                   placeholder="What's your message?"
                   minRows={10}
                   aria-label="message"
