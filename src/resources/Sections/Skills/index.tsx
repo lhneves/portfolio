@@ -49,6 +49,7 @@ export default function Skills() {
               onClick={() => setSkillSelected(skill as SkillType)}
               onMouseEnter={() => setSkillSelected(skill as SkillType)}
               onMouseLeave={() => setSkillSelected(undefined)}
+              isSkillSelected={skillSelected === skill}
             />
           ))}
         </SkillsContainer>
