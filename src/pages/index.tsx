@@ -4,6 +4,9 @@ import Projects from '@/resources/Sections/Projects';
 import Skills from '@/resources/Sections/Skills';
 import { Container } from '@/styles/pages/index.styled';
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 export default function Home() {
   return (
     <Container>
@@ -11,6 +14,7 @@ export default function Home() {
       <Skills />
       <Projects />
       <Contact />
+      <ToastContainer />
     </Container>
   );
 }

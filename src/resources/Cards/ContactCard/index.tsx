@@ -3,6 +3,7 @@ import { Card, Input, Loading, Textarea } from '@nextui-org/react';
 import { ButtonStyled, CardStyled, Form, GradientDiv, QuestionTitle, Title } from './styled';
 import { Controller, useForm } from 'react-hook-form';
 import emailjs from '@emailjs/browser';
+import { toast } from 'react-toastify';
 
 interface ContactFormData {
   name: string;
@@ -29,12 +30,54 @@ export default function ContactCard() {
         )
         .then(() => {
           setMessageSent(true);
+          toast.success(
+            <p>
+              Your message was send! <br /> Thank you!
+            </p>,
+            {
+              position: 'top-right',
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+            },
+          );
           setIsLoading(false);
         })
         .catch(() => {
+          toast.error(
+            <p>
+              Something went wrong! 😔 <br /> Try again!
+            </p>,
+            {
+              position: 'top-right',
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              progress: undefined,
+              theme: 'light',
+            },
+          );
           setIsLoading(false);
         });
     } catch (error) {
+      toast.error(
+        <p>
+          Something went wrong! 😔 <br /> Try again!
+        </p>,
+        {
+          position: 'top-right',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          progress: undefined,
+          theme: 'light',
+        },
+      );
       setIsLoading(false);
     }
   };
