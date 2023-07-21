@@ -22,10 +22,10 @@ export default function ContactCard() {
     try {
       emailjs
         .send(
-          process.env.EMAILJS_SERVICE_KEY,
-          process.env.EMAILJS_TEMPLATE_KEY,
+          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_KEY,
+          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_KEY,
           { name: data.name, email: data.email, message: data.message },
-          process.env.EMAILJS_PUBLIC_KEY,
+          process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
         )
         .then(() => {
           setMessageSent(true);

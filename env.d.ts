@@ -1,9 +1,9 @@
 declare global {
   namespace NodeJS {
     interface ProcessEnv {
-      EMAILJS_TEMPLATE_KEY: string;
-      EMAILJS_SERVICE_KEY: string;
-      EMAILJS_PUBLIC_KEY: string;
+      NEXT_PUBLIC_EMAILJS_TEMPLATE_KEY: string;
+      NEXT_PUBLIC_EMAILJS_SERVICE_KEY: string;
+      NEXT_PUBLIC_EMAILJS_PUBLIC_KEY: string;
       NODE_ENV: 'development' | 'production';
     }
   }
