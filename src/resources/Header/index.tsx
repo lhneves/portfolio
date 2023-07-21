@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import { Navbar, Image, Link as LinkUI } from '@nextui-org/react';
 import { default as NextLink } from 'next/link';
 import { Link as ScrollLink } from 'react-scroll';
+import ThemeToggleButton from '../ThemeToggleButton';
 
 export default function Header() {
   const navbarLinks = ['SKILLS', 'PROJECTS', 'CONTACT'];
@@ -57,7 +58,11 @@ export default function Header() {
           );
         })}
       </Navbar.Content>
-      <Navbar.Content></Navbar.Content>
+      <Navbar.Content>
+        <Navbar.Item>
+          <ThemeToggleButton />
+        </Navbar.Item>
+      </Navbar.Content>
       <Navbar.Collapse>
         {navbarLinks.map((item) => {
           const linkTo = item.split(' ').join('-').toLocaleLowerCase();

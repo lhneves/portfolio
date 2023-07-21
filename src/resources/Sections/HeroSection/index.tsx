@@ -11,9 +11,11 @@ import {
   ScrollIndicator,
   ImageContainer,
 } from './styled';
-import { Image } from '@nextui-org/react';
+import { Image, useTheme } from '@nextui-org/react';
 
 export default function Hero() {
+  const { isDark } = useTheme();
+
   return (
     <Container id="intro">
       <LeftContainer>
@@ -35,7 +37,7 @@ export default function Hero() {
           alt="Emoji Saying Hi!"
         />
       </ImageContainer>
-      <ScrollIndicator href="/#about-me">
+      <ScrollIndicator href="/#about-me" dark={isDark}>
         <span></span>
       </ScrollIndicator>
     </Container>
