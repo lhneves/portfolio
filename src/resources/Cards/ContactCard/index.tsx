@@ -157,7 +157,7 @@ export default function ContactCard() {
             />
             <ButtonStyled auto disabled={messageSent} type="submit">
               {isLoading ? (
-                <Loading size="sm" />
+                <Loading size="md" type="spinner" color="white" />
               ) : messageSent ? (
                 'Thank you for your message!'
               ) : (
