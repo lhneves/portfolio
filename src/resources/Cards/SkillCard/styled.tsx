@@ -3,6 +3,8 @@ import styled from '@emotion/styled';
 import { Card } from '@nextui-org/react';
 
 export const CardStyled = styled(Card)<{ selected?: boolean; dark?: string }>`
+  display: flex;
+  align-items: center;
   max-width: 90px;
   padding: 0.8rem;
   border: 2px solid #4277ff;
@@ -43,8 +45,13 @@ export const CardBodyStyled = styled(Card.Body)`
   width: fit-content;
 
   & > svg {
-    width: 48px;
-    height: 48px;
+    width: 32px;
+    height: 32px;
     fill: #4277ff;
+
+    @media (min-width: 600px) {
+      width: 48px;
+      height: 48px;
+    }
   }
 `;
