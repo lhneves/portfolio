@@ -1,9 +1,10 @@
 import React, { useRef, useState } from 'react';
-import { Navbar, Image, Link as LinkUI } from '@nextui-org/react';
+import { Navbar, Link as LinkUI } from '@nextui-org/react';
 import { default as NextLink } from 'next/link';
 import { Link as ScrollLink } from 'react-scroll';
 import ThemeToggleButton from '../ThemeToggleButton';
 import AnimationLayout from '../Animations/AnimationLayout';
+import Image from 'next/image';
 
 export default function Header() {
   const navbarLinks = ['SKILLS', 'PROJECTS', 'CONTACT'];
@@ -37,7 +38,7 @@ export default function Header() {
           onChange={() => setIsSideMenuOpen(!isSideMenuOpen)}
         />
         <Navbar.Brand>
-          <Image src="/images/me_around_clouds.png" showSkeleton />
+          <Image src="/images/me_around_clouds.png" alt="Me Around Clouds" />
         </Navbar.Brand>
         <Navbar.Content enableCursorHighlight activeColor="default" hideIn="xs">
           {navbarLinks.map((link) => {
