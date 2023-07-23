@@ -105,7 +105,7 @@ export const ImageContainer = styled.div`
   }
 `;
 
-export const ScrollIndicator = styled.a<{ dark?: boolean }>`
+export const ScrollIndicator = styled.a<{ dark?: string }>`
   @media (min-width: 600px) {
     display: inline-block;
   }
@@ -116,7 +116,7 @@ export const ScrollIndicator = styled.a<{ dark?: boolean }>`
   z-index: 2;
   -webkit-transform: translate(0, -50%);
   transform: translate(0, -50%);
-  color: ${({ dark }) => (dark ? '#fff' : '#000')};
+  color: ${({ dark }) => (dark === 'true' ? '#fff' : '#000')};
   letter-spacing: 0.1em;
   text-decoration: none;
   transition: opacity 0.3s;
@@ -132,7 +132,7 @@ export const ScrollIndicator = styled.a<{ dark?: boolean }>`
     width: ${rem(30)};
     height: ${rem(50)};
     margin-left: ${rem(-15)};
-    border: ${rem(2)} solid ${({ dark }) => (dark ? '#fff' : '#000')};
+    border: ${rem(2)} solid ${({ dark }) => (dark === 'true' ? '#fff' : '#000')};
     border-radius: ${rem(50)};
     box-sizing: border-box;
 
@@ -144,7 +144,7 @@ export const ScrollIndicator = styled.a<{ dark?: boolean }>`
       width: ${rem(6)};
       height: ${rem(6)};
       margin-left: ${rem(-3)};
-      background-color: ${({ dark }) => (dark ? '#fff' : '#000')};
+      background-color: ${({ dark }) => (dark === 'true' ? '#fff' : '#000')};
       border-radius: 100%;
       -webkit-animation: ${sdb10} 2s infinite;
       animation: ${sdb10} 2s infinite;

@@ -28,7 +28,7 @@ export default function SkillCard({
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       onClick={onClick}
-      dark={isDark}
+      dark={String(isDark)}
     >
       <Card.Body>
         <Image src={imageURL} />

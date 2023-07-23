@@ -1,3 +1,4 @@
+import AnimationLayout from '@/resources/Animations/AnimationLayout';
 import Contact from '@/resources/Sections/Contact';
 import HeroSection from '@/resources/Sections/HeroSection';
 import Projects from '@/resources/Sections/Projects';
@@ -9,12 +10,14 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export default function Home() {
   return (
-    <Container>
-      <HeroSection />
-      <Skills />
-      <Projects />
-      <Contact />
-      <ToastContainer />
-    </Container>
+    <AnimationLayout type="up">
+      <Container>
+        <HeroSection />
+        <Skills />
+        <Projects />
+        <Contact />
+        <ToastContainer />
+      </Container>
+    </AnimationLayout>
   );
 }

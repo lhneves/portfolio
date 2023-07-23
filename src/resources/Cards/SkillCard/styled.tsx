@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Card } from '@nextui-org/react';
 
-export const CardStyled = styled(Card)<{ selected?: boolean; dark?: boolean }>`
+export const CardStyled = styled(Card)<{ selected?: boolean; dark?: string }>`
   max-width: 90px;
   padding: 0.8rem;
   border: 2px solid #4277ff;
@@ -21,7 +21,7 @@ export const CardStyled = styled(Card)<{ selected?: boolean; dark?: boolean }>`
         right: 6px;
         border-radius: 50%;
       }
-      box-shadow: ${dark
+      box-shadow: ${dark === 'true'
         ? 'rgba(255, 255, 255, 0.43) 0px 2px 8px'
         : 'rgba(0, 0, 0, 0.24) 0px 3px 8px'};
     `}
