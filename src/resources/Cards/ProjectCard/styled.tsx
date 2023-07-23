@@ -14,6 +14,12 @@ export const CardStyled = styled(Card)`
 export const BodyStyled = styled(Card.Body)`
   gap: 30px;
   min-height: 220px;
+
+  & > svg {
+    width: 61px;
+    height: 61px;
+    fill: #fff;
+  }
 `;
 
 export const Title = styled.h4`
