@@ -38,7 +38,7 @@ export default function Header() {
           onChange={() => setIsSideMenuOpen(!isSideMenuOpen)}
         />
         <Navbar.Brand>
-          <Image src="/images/me_around_clouds.png" alt="Me Around Clouds" />
+          <Image src="/images/me_around_cloud.webp" alt="Me Around Clouds" width={56} height={56} />
         </Navbar.Brand>
         <Navbar.Content enableCursorHighlight activeColor="default" hideIn="xs">
           {navbarLinks.map((link) => {

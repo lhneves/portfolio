@@ -32,7 +32,7 @@ export default function Hero() {
           </SubTitle>
         </LeftContainer>
         <ImageContainer>
-          <Image src="/images/hello.png" width={400} height={500} alt="Emoji Saying Hi!" />
+          <Image src="/images/hello.webp" width={400} height={500} alt="Emoji Saying Hi!" />
         </ImageContainer>
         <ScrollIndicator href="/#about-me" dark={String(isDark)}>
           <span></span>
