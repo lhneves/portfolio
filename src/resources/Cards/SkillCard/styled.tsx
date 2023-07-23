@@ -36,3 +36,15 @@ export const CardStyled = styled(Card)<{ selected?: boolean; dark?: string }>`
     padding: 3rem;
   }
 `;
+
+export const CardBodyStyled = styled(Card.Body)`
+  display: flex;
+  align-items: center;
+  width: fit-content;
+
+  & > svg {
+    width: 48px;
+    height: 48px;
+    fill: #4277ff;
+  }
+`;

@@ -7,6 +7,7 @@ import {
   SubContainer,
 } from './styled';
 import SkillCard from '../../Cards/SkillCard';
+import { SkillsType } from '@/models/skills.interface';
 
 export default function Skills() {
   const skills = {
@@ -29,8 +30,7 @@ export default function Skills() {
     materialUI:
       'Material UI is a popular React component library that implements Material Design principles for building visually appealing and responsive user interfaces.',
   };
-  type SkillType = keyof typeof skills;
-  const [skillSelected, setSkillSelected] = useState<SkillType>();
+  const [skillSelected, setSkillSelected] = useState<SkillsType>();
 
   return (
     <Container id="skills">
@@ -42,16 +42,19 @@ export default function Skills() {
           </SkillDescription>
         </DescriptionContainer>
         <SkillsContainer>
-          {Object.keys(skills).map((skill) => (
-            <SkillCard
-              key={skill}
-              imageURL={`/devicons/${skill}.svg`}
-              onClick={() => setSkillSelected(skill as SkillType)}
-              onMouseEnter={() => setSkillSelected(skill as SkillType)}
-              onMouseLeave={() => setSkillSelected(undefined)}
-              isSkillSelected={skillSelected === skill}
-            />
-          ))}
+          {Object.keys(skills).map((skill) => {
+            const typedSkill = skill as SkillsType;
+            return (
+              <SkillCard
+                key={skill}
+                skill={typedSkill}
+                onClick={() => setSkillSelected(typedSkill)}
+                onMouseEnter={() => setSkillSelected(typedSkill)}
+                onMouseLeave={() => setSkillSelected(undefined)}
+                isSkillSelected={skillSelected === skill}
+              />
+            );
+          })}
         </SkillsContainer>
       </SubContainer>
     </Container>

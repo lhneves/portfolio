@@ -1,9 +1,24 @@
 import React from 'react';
-import { CardStyled } from './styled';
-import { Card, Image, useTheme } from '@nextui-org/react';
+import { CardBodyStyled, CardStyled } from './styled';
+import { useTheme } from '@nextui-org/react';
+import { SkillsType } from '@/models/skills.interface';
+import {
+  SiCss3,
+  SiHtml5,
+  SiJavascript,
+  SiJest,
+  SiMui,
+  SiNextdotjs,
+  SiReact,
+  SiStorybook,
+  SiStyledcomponents,
+  SiThreedotjs,
+  SiTypescript,
+} from 'react-icons/si';
+import { BsCodeSlash } from 'react-icons/bs';
 
 interface SkillCard {
-  imageURL: string;
+  skill: SkillsType;
   isSkillSelected?: boolean;
   onMouseEnter: () => void;
   onMouseLeave: () => void;
@@ -11,13 +26,28 @@ interface SkillCard {
 }
 
 export default function SkillCard({
-  imageURL,
+  skill,
   isSkillSelected,
   onMouseEnter,
   onMouseLeave,
   onClick,
 }: SkillCard) {
   const { isDark } = useTheme();
+
+  const skills = {
+    html: <SiHtml5 />,
+    css: <SiCss3 />,
+    react: <SiReact />,
+    next: <SiNextdotjs />,
+    typescript: <SiTypescript />,
+    javascript: <SiJavascript />,
+    storybook: <SiStorybook />,
+    styledComponents: <SiStyledcomponents />,
+    devSkills: <BsCodeSlash />,
+    threejs: <SiThreedotjs />,
+    jest: <SiJest />,
+    materialUI: <SiMui />,
+  };
 
   return (
     <CardStyled
@@ -30,9 +60,7 @@ export default function SkillCard({
       onClick={onClick}
       dark={String(isDark)}
     >
-      <Card.Body>
-        <Image src={imageURL} />
-      </Card.Body>
+      <CardBodyStyled>{skills[skill]}</CardBodyStyled>
     </CardStyled>
   );
 }

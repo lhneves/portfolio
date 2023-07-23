@@ -1,7 +1,7 @@
 import Contact from '@/resources/Sections/Contact';
 import HeroSection from '@/resources/Sections/HeroSection';
 import Projects from '@/resources/Sections/Projects';
-// import Skills from '@/resources/Sections/Skills';
+import Skills from '@/resources/Sections/Skills';
 import { Container } from '@/styles/pages/index.styled';
 
 import { ToastContainer } from 'react-toastify';
@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <Container>
       <HeroSection />
-      {/* <Skills /> */}
+      <Skills />
       <Projects />
       <Contact />
       <ToastContainer />
