@@ -8,6 +8,7 @@ import {
 } from './styled';
 import SkillCard from '../../Cards/SkillCard';
 import { SkillsType } from '@/models/skills.interface';
+import AnimationLayout from '@/resources/Animations/AnimationLayout';
 
 export default function Skills() {
   const skills = {
@@ -33,30 +34,32 @@ export default function Skills() {
   const [skillSelected, setSkillSelected] = useState<SkillsType>();
 
   return (
-    <Container id="skills">
-      <SubContainer>
-        <DescriptionContainer>
-          <h1>My Skills</h1>
-          <SkillDescription>
-            {skillSelected ? skills[skillSelected] : 'Click on any skill to see a description.'}
-          </SkillDescription>
-        </DescriptionContainer>
-        <SkillsContainer>
-          {Object.keys(skills).map((skill) => {
-            const typedSkill = skill as SkillsType;
-            return (
-              <SkillCard
-                key={skill}
-                skill={typedSkill}
-                onClick={() => setSkillSelected(typedSkill)}
-                onMouseEnter={() => setSkillSelected(typedSkill)}
-                onMouseLeave={() => setSkillSelected(undefined)}
-                isSkillSelected={skillSelected === skill}
-              />
-            );
-          })}
-        </SkillsContainer>
-      </SubContainer>
-    </Container>
+    <AnimationLayout type="up" id="skills">
+      <Container>
+        <SubContainer>
+          <DescriptionContainer>
+            <h1>My Skills</h1>
+            <SkillDescription>
+              {skillSelected ? skills[skillSelected] : 'Click on any skill to see a description.'}
+            </SkillDescription>
+          </DescriptionContainer>
+          <SkillsContainer>
+            {Object.keys(skills).map((skill) => {
+              const typedSkill = skill as SkillsType;
+              return (
+                <SkillCard
+                  key={skill}
+                  skill={typedSkill}
+                  onClick={() => setSkillSelected(typedSkill)}
+                  onMouseEnter={() => setSkillSelected(typedSkill)}
+                  onMouseLeave={() => setSkillSelected(undefined)}
+                  isSkillSelected={skillSelected === skill}
+                />
+              );
+            })}
+          </SkillsContainer>
+        </SubContainer>
+      </Container>
+    </AnimationLayout>
   );
 }
