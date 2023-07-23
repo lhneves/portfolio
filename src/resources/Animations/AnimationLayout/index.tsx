@@ -8,7 +8,7 @@ export default function AnimationLayout({
 }: {
   id?: string;
   children?: React.ReactNode;
-  type: 'down' | 'up' | 'inView';
+  type: 'down' | 'up' | 'inView' | 'appear';
 }) {
   if (type === 'inView') {
     const ref = useRef(null);
@@ -48,6 +48,21 @@ export default function AnimationLayout({
           width: '100%',
           backgroundColor: 'transparent',
         }}
+      >
+        {children}
+      </motion.div>
+    );
+  }
+
+  if (type === 'appear') {
+    return (
+      <motion.div
+        id={id}
+        initial={{ y: 10, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        exit={{ y: -10, opacity: 0 }}
+        transition={{ duration: 2, delay: 0.3 }}
+        style={{ height: '100%', width: '100%', backgroundColor: 'transparent' }}
       >
         {children}
       </motion.div>

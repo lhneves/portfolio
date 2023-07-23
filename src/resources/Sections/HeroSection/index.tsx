@@ -18,7 +18,7 @@ export default function Hero() {
   const { isDark } = useTheme();
 
   return (
-    <AnimationLayout type="up" id="intro">
+    <AnimationLayout type="appear" id="intro">
       <Container>
         <LeftContainer>
           <UpTitle>Hi, there!</UpTitle>
