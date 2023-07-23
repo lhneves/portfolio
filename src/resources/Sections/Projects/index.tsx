@@ -23,13 +23,13 @@ export default function Projects() {
 
         <ProjectsContainer>
           <ProjectCard
-            imageURL="/devicons/countdown.svg"
+            imageURL="/icons/countdown.svg"
             title="COUNTDOWN PROJECT"
             footerTitle="COUNTDOWN"
             href="https://countdown-project-seven.vercel.app/"
           />
-          <ProjectCard imageURL="/devicons/config.svg" footerTitle="AVAILABLE SOON" />
-          <ProjectCard imageURL="/devicons/code.svg" footerTitle="YOUR DREAM PROJECT" />
+          <ProjectCard imageURL="/icons/config.svg" footerTitle="AVAILABLE SOON" />
+          <ProjectCard imageURL="/icons/code.svg" footerTitle="YOUR DREAM PROJECT" />
         </ProjectsContainer>
       </Container>
     </AnimationLayout>
