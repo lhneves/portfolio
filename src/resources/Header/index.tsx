@@ -42,7 +42,6 @@ export default function Header() {
         <Navbar.Content enableCursorHighlight activeColor="default" hideIn="xs">
           {navbarLinks.map((link) => {
             const linkTo = link.split(' ').join('-').toLocaleLowerCase();
-            console.log('aqui');
             return (
               <Navbar.Link
                 as={ScrollLink}
