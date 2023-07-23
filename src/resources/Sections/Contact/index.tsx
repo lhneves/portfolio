@@ -8,8 +8,8 @@ import AnimationLayout from '@/resources/Animations/AnimationLayout';
 
 export default function Contact() {
   return (
-    <AnimationLayout type="inView">
-      <Container id="contact">
+    <AnimationLayout type="inView" id="contact">
+      <Container>
         <ContactCard />
         <RightSideContainer>
           <Title>You came this far, why don&apos;t you reach me?</Title>

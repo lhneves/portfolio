@@ -37,11 +37,12 @@ export default function Header() {
           onChange={() => setIsSideMenuOpen(!isSideMenuOpen)}
         />
         <Navbar.Brand>
-          <Image src="/images/me_around_clouds.svg" showSkeleton />
+          <Image src="/images/me_around_clouds.png" showSkeleton />
         </Navbar.Brand>
         <Navbar.Content enableCursorHighlight activeColor="default" hideIn="xs">
           {navbarLinks.map((link) => {
             const linkTo = link.split(' ').join('-').toLocaleLowerCase();
+            console.log('aqui');
             return (
               <Navbar.Link
                 as={ScrollLink}
