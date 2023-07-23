@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
 import type { AppProps } from 'next/app';
 import { ThemeProvider as NextThemesProvider } from 'next-themes';
@@ -25,6 +27,12 @@ const darkTheme = createTheme({
 });
 
 export default function App({ Component, pageProps }: AppProps) {
+  const { pathname } = useRouter();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <NextThemesProvider
       defaultTheme="system"
