@@ -67,13 +67,20 @@ export const SubTitle = styled.p`
   @media (min-width: 1200px) {
     font-size: ${rem(32)};
   }
+
+  & > i {
+    font-weight: 300;
+  }
 `;
 
 export const HighlightSubTitle = styled.span`
-  background: linear-gradient(180deg, #0072f5 70%, #4617ff 20%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(180deg, #0b50ff 11.2%, #672bff 92.5%);
   background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  filter: brightness(1.85);
 `;
 
 const sdb10 = keyframes`

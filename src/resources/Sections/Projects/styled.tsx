@@ -8,9 +8,10 @@ export const Container = styled.section`
   align-items: center;
   flex-direction: column;
 
-  @media (min-width: 1200px) {
+  @media (min-width: 600px) {
     gap: 60px;
     height: 90vh;
+    padding-top: 6rem;
   }
 `;
 
@@ -18,7 +19,7 @@ export const ProjectsContainer = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 90%;
+  width: 100%;
   gap: 20px;
   padding-top: 1rem;
   padding-bottom: 1rem;
