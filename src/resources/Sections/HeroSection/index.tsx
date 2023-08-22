@@ -28,7 +28,8 @@ export default function Hero() {
           </Title>
           <SubTitle>
             And I will help you create <HighlightSubTitle>beautiful</HighlightSubTitle> and
-            <span> faster </span> interfaces that leads to the application success.
+            <i> faster </i>
+            interfaces that leads to the application success.
           </SubTitle>
         </LeftContainer>
         <ImageContainer>

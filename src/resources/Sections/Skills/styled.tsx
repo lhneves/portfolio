@@ -4,10 +4,11 @@ export const Container = styled.section`
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding-top: 3rem;
   padding-bottom: 3rem;
+  min-height: 80vh;
 
   @media (min-width: 600px) {
+    padding-top: 3rem;
     align-items: center;
   }
 
@@ -20,11 +21,7 @@ export const SubContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
-
-  @media (min-width: 1200px) {
-    display: grid;
-    grid-template-columns: 0.8fr 1fr;
-  }
+  max-width: 1200px;
 `;
 
 export const DescriptionContainer = styled.div`

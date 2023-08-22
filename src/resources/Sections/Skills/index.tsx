@@ -9,6 +9,7 @@ import {
 import SkillCard from '../../Cards/SkillCard';
 import { SkillsType } from '@/models/skills.interface';
 import AnimationLayout from '@/resources/Animations/AnimationLayout';
+import { motion } from 'framer-motion';
 
 export default function Skills() {
   const skills = {
@@ -34,14 +35,34 @@ export default function Skills() {
   const [skillSelected, setSkillSelected] = useState<SkillsType>();
 
   return (
-    <AnimationLayout type="up" id="skills">
-      <Container>
+    <AnimationLayout type="up">
+      <Container id="skills">
         <SubContainer>
           <DescriptionContainer>
             <h1>My Skills</h1>
-            <SkillDescription>
-              {skillSelected ? skills[skillSelected] : 'Click on any skill to see a description.'}
-            </SkillDescription>
+            {skillSelected ? (
+              <motion.div
+                key="selected"
+                style={{ display: 'inline-block' }}
+                initial={{ x: -40, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: 40, opacity: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <SkillDescription>{skills[skillSelected]}</SkillDescription>
+              </motion.div>
+            ) : (
+              <motion.div
+                key="notSelected"
+                style={{ display: 'inline-block' }}
+                exit={{ x: -40, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                initial={{ x: 40, opacity: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <SkillDescription>Click on any skill to see a description.</SkillDescription>
+              </motion.div>
+            )}
           </DescriptionContainer>
           <SkillsContainer>
             {Object.keys(skills).map((skill) => {

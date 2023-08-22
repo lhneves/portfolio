@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react';
 import { Navbar, Link as LinkUI } from '@nextui-org/react';
-import { default as NextLink } from 'next/link';
 import { Link as ScrollLink } from 'react-scroll';
 import ThemeToggleButton from '../ThemeToggleButton';
 import AnimationLayout from '../Animations/AnimationLayout';
@@ -42,7 +41,7 @@ export default function Header() {
         </Navbar.Brand>
         <Navbar.Content enableCursorHighlight activeColor="default" hideIn="xs">
           {navbarLinks.map((link) => {
-            const linkTo = link.split(' ').join('-').toLocaleLowerCase();
+            const linkTo = link.toLocaleLowerCase();
             return (
               <Navbar.Link
                 as={ScrollLink}
@@ -67,21 +66,27 @@ export default function Header() {
           </Navbar.Item>
         </Navbar.Content>
         <Navbar.Collapse>
-          {navbarLinks.map((item) => {
-            const linkTo = item.split(' ').join('-').toLocaleLowerCase();
+          {navbarLinks.map((link) => {
+            const linkTo = link.toLocaleLowerCase();
             return (
               <Navbar.CollapseItem
-                key={item}
-                activeColor="default"
+                key={link}
+                activeColor="primary"
                 isActive={activeLink === linkTo}
               >
                 <LinkUI
-                  as={NextLink}
+                  as={ScrollLink}
+                  to={linkTo}
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={100}
+                  onSetActive={handleSetActive}
+                  onSetInactive={handleSetInactive}
                   onClick={() => handleSideMenu()}
                   color="inherit"
-                  href={`/#${item.split(' ').join('-').toLocaleLowerCase()}`}
                 >
-                  {item}
+                  {link}
                 </LinkUI>
               </Navbar.CollapseItem>
             );
